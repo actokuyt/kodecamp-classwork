@@ -90,3 +90,26 @@ end
 ```
 
 With these changes made, we can go ahead to run `vagrant up` to spin up our environment, and once it's done we can run `wget -qO- 127.0.0.1`, to test our server.
+
+
+## Port Forwarding With Vagrant
+To forawrd a port is simply giving access to your guest system from the host system. Essentially, this provides a way to communicate with your guest system, by giving it a location, more casually a door to it's apartment where you can knock on to make requests or talk to it. To achieve this, one can add another line to the vagrant config block on the vagrnat file, so that we now have this:
+
+```ruby
+# initaite a vagrant configuration block using the configure method
+Vagrant.configure("2") do |config|
+
+# set "ubuntu/focal64" as the base image to use
+  config.vm.box = "ubuntu/focal64"
+
+# tell vagrant to run our bash script during setup
+  config.vm.provision :shell, path: "bootstrap.sh"
+
+# tell vagrant to forward the port 80 on the guest to port 4567 on the host.
+  config.vm.network :forwarded_port, guest: 80, host: 4567
+
+# end the configuration block
+end
+```
+
+With this new instruction we successfully open a portal to reach our guest system through the host. So any requests or messages that goes to the port 4567 on the host is forwarded to the port 80 on the guest system. We can now open our browser and visit `localhost:4567` and we should get our html page as response.

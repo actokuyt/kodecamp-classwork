@@ -52,7 +52,7 @@ Symbolic mode uses symbols (r, w, x, +, -, =) to change permissions. Where :
 
 e.g: 
 - `chmod u+x <filename>` adds execution permissions to the user.
-- `chmod g-w <filename>` removes write permissions to the group.
+- `chmod g-w <filename>` removes write permissions from the group.
 - `chmod a=rw <filename>` sets read and write permissions for all entities.
 
 
