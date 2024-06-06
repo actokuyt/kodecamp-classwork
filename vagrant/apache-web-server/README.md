@@ -1,4 +1,4 @@
-# Vagrant
+# Set Up Vagrant With Apache2 and Serve a Static Page via Port Forwarding
 
 Vagrant isolates dependencies and their configuration within a single disposable, consistent environment, without sacrificing any of your existing tools. 
 In lay-man terms vagrant helps you package a light weight bootable environment (OS) called boxes, which can be run on a hypervisor or a containerization platform.
