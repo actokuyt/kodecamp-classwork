@@ -157,7 +157,7 @@ systemctl restart mysql
     * On the web server VM - `~$ nginx -V` and `~$ mysql -V`.
     * On the DB server VM - `~$ mysql -V`.
 
-- Also we can open `localhost:4567` on the browser and we should see the page being served by nginx on the web server.
+- Also we can open `localhost:4567` on the browser and we should see the page being served by nginx on the web server VM.
 
 - To confirm the VMs can talk to each other we'll try to access the database we created on the DB server from the web server using the following commands.
     * On the web server VM, run `~$ mysql -h192.168.50.5 -umy_user -pmy_password`. If it's successful, you'll be ushered into mysql, where you'll run the next command.
